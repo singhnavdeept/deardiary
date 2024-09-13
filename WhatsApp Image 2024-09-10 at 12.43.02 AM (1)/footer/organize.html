@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organize According to Me</title>
+  <link rel="stylesheet" href="organize.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Side - To-Do List -->
+    <div class="to-do-list">
+      <h2>To-Do List</h2>
+      <ul id="toDoList">
+        <!-- Dynamic tasks will go here -->
+      </ul>
+      <div class="add-task">
+        <input type="text" id="newTaskInput" placeholder="Add a new task..." />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+    </div>
+
+    <!-- Right Side - Goals -->
+    <div class="goals-board">
+      <h2>Goals</h2>
+      <div id="goalsSection">
+        <!-- Dynamic goals will go here -->
+      </div>
+      <div class="add-goal">
+        <input type="text" id="newGoalInput" placeholder="Add a new goal..." />
+        <button onclick="addGoal()">Add Goal</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="organize.js"></script>
+</body>
+</html>

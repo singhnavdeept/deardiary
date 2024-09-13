@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Diary - Mindfulness Platform</title>
+    <link rel="stylesheet" href="dd.css">
+    <style>
+        .notebook {
+            font-family: 'Patrick Hand', cursive; /* Handwritten-style font */
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .font-selector {
+            font-family: 'Patrick Hand', cursive; /* Handwritten-style font */
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 4vh;
+            
+            margin-bottom: 15px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+        .notebook {
+            background: linear-gradient(transparent 29px, #d9d9d9 30px);
+            background-size: 100% 30px; /* Line height in notebook */
+            padding: 20px;
+            width: 600px;
+            height: 500px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fffef8;
+            position: relative;
+        }
+
+        .notebook textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+            background: transparent;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 30px; /* Matching background line height */
+            font-family: 'Patrick Hand', cursive; /* Handwritten font for notebook look */
+            color: #333;
+            overflow-y: auto;
+            white-space: pre-wrap; /* Allows multiline text wrapping */
+        }
+
+        .notebook textarea::placeholder {
+            color: #aaa;
+        }
+
+        /* Add a notebook margin on the left side */
+        .notebook::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            bottom: 0;
+            width: 2px;
+            background-color: #ff7b7b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Dear Diary</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Mindfulness & Self-Counseling</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main  class="main">
+        
+        <section class="journal-area">
+            <h1>Your Thoughts Today</h1>
+            <div class="journal-box">
+                <h2>Dear Diary</h2>
+                <div class="font-selector">
+                    <label for="fontSelect">Choose your writing style:</label>
+                    <select id="fontSelect">
+                        <option value="'Courier New', Courier, monospace">Typewriter (Courier)</option>
+                        <option value="'Patrick Hand', cursive">Handwriting (Patrick Hand)</option>
+                        <option value="'Arial', sans-serif">Modern (Arial)</option>
+                        <option value="'Times New Roman', Times, serif">Classic (Times New Roman)</option>
+                    </select>
+                </div>
+                <div class="notebook">
+                <textarea placeholder="Write your thoughts here..."></textarea>
+                </div>
+                <div class="buttons">
+                    <button class="begin">Begin</button>
+                    <button class="cancel">Woosh!</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decorative Elements -->
+        <div class="decorative-elements">
+            <div class="cloud-sun">
+                <img src="cloud.png" alt="Cloud">
+                <img src="sun.png" alt="Sun">
+            </div>
+            <div class="plants">
+                <img src="plants.png" alt="Plants">
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Section - Mindfulness Tools -->
+    <footer>
+        <div class="tool-icons">
+            
+            <div class="icon">
+                <img src="breathing-icon.png" alt="Breathing Techniques">
+                <p>Breathing Techniques</p>
+            </div>
+            <div class="icon">
+                <img src="meditation-icon.png" alt="Meditation">
+                <p>Meditation</p>
+            </div>
+            <div class="icon">
+                <a href="footer/organize.html"><img src="meditation-icon.png" alt="Meditation">
+                <p>Organize</p></a>
+            </div>
+            <div class="icon">
+                <img src="self-counseling-icon.png" alt="Self-Counseling">
+                <p>Self-Counseling</p>
+            </div>
+            <div class="icon">
+                <img src="thoughts-icon.png" alt="Your Thoughts">
+                <p>Calmer</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Get references to elements
+        const fontSelect = document.getElementById('fontSelect');
+        const notebookTextarea = document.getElementById('notebookTextarea');
+
+        // Listen for font change
+        fontSelect.addEventListener('change', function() {
+            // Apply selected font to the textarea
+            notebookTextarea.style.fontFamily = this.value;
+        });
+    </script>
+</body>
+</html>
